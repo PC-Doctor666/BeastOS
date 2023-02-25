@@ -1,0 +1,8 @@
+#!/bin/bash
+
+qemu-system-arm \
+    -M versatilepb \
+    -m 128M \
+    -cpu arm1136 \
+    -kernel kernel.bin \
+    -nographic
