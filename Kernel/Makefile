@@ -32,16 +32,15 @@ kernel.elf: $(OBJS)
 	@echo "OBJCOPY $@"
 	@$(OBJCOPY) -Obinary kernel.elf kernel.bin
 
-
-
-.SUFFIXES: .s .o .elf
-
 run:
 	@./scripts/boot
 
 clean:
 	@rm -f *.o *.elf *.bin *.map *.txt *.img
 	@find . -type f -iname "*.o*" -delete
+
+
+.SUFFIXES: .s .o .elf
 
 .s.o:
 	@echo "AS $<"
